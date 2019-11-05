@@ -3,6 +3,12 @@ This repository contains the scripts and other useful info related to my JNUC 20
 
 ## Overall Flow ##
 
+The overall flow of this talk is how to bring mac devices into jamf management with a common, or at least a known, clean OS and then to be able to erase and reprovision then automatically, possibly with no interaction at all, regardless of whether they are DEP capable or not.
 
 
 ![Flow](https://github.com/PhantomPhixer/JNUC-2019/blob/master/images/flow.png)
+
+
+
+
+As the flow shows the *Build* part is common allowing simple management of the build process.
