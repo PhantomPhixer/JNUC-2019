@@ -14,8 +14,8 @@ The overall aim of the talk's is how to bring mac devices into jamf management w
 As the flow shows the *Build* part is common allowing simple management of the build process. The entry route is variable and the post build tasks and flows are automatically driven by policies to enable the whole thing to be driven from Jamf.
 
 ## Who's it aimed at? ##
-Anyone managing macs! Although developed for organisations bringing devices, both DEP and non DEP, into Jamf the methods used can be applied if you already have your whole fleet in Jamf already.
-so as the talk said;
+Anyone managing macs! Although developed for organisations bringing devices, both DEP and non DEP, into Jamf the methods used can be applied if you already have your whole fleet in Jamf.
+So as the talk said;
 
 
 **Are you an organisation with**
@@ -27,3 +27,7 @@ so as the talk said;
 
 
 **Then this is for you...**
+
+## The DEP Build ##
+
+The challenge for the build started with having two distint build types but only wanting one way to build them. NoMAD login has a mechanism for allowing user input at the login screen. So taking a lot of inspiration from [Neil Martins blog](https://github.com/neilmartin83/MacADUK-2019/blob/master/Neil_Martin_MacADUK_2019_Slides_FINAL.pdf) the NoMAD login *User_Input* method was chosen as a way to allow selection.
