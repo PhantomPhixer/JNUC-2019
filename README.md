@@ -31,3 +31,10 @@ So as the talk said;
 ## The DEP Build ##
 
 The challenge for the build started with having two distint build types but only wanting one way to build them. NoMAD login has a mechanism for allowing user input at the login screen. So taking a lot of inspiration from [Neil Martins blog](https://github.com/neilmartin83/MacADUK-2019/blob/master/Neil_Martin_MacADUK_2019_Slides_FINAL.pdf) the NoMAD login *User_Input* method was chosen as a way to allow selection.
+
+When it's in action it can look like this,
+
+![NoMAD User_Input](https://github.com/PhantomPhixer/JNUC-2019/blob/master/images/nomad-choice.png)
+
+This screen can be configured with many input choices dependant upon requirements, for this only one is required. How this is achieved is explained later.
+
