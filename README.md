@@ -3,7 +3,7 @@ This repository contains the scripts and other useful info related to my JNUC 20
 
 ## Overall Flow ##
 
-The overall flow of the talk's subject is how to bring mac devices into jamf management with a common, or at least a known, clean OS and then to be able to erase and reprovision then automatically, possibly with no interaction at all, regardless of whether they are DEP capable or not.
+The overall aim of the talk's is how to bring mac devices into jamf management with a common, or at least a known, clean OS and then to be able to erase and reprovision then automatically, possibly with no interaction at all, regardless of whether they are DEP capable or not.
 
 
 ![Flow](https://github.com/PhantomPhixer/JNUC-2019/blob/master/images/flow.png)
@@ -11,7 +11,7 @@ The overall flow of the talk's subject is how to bring mac devices into jamf man
 
 
 
-As the flow shows the *Build* part is common allowing simple management of the build process.
+As the flow shows the *Build* part is common allowing simple management of the build process. The entry route is variable and the post build tasks and flows are automatically driven by policies to enable the whole thing to be driven from Jamf.
 
 ## Who's it aimed at? ##
 Anyone managing macs! Although developed for organisations bringing devices, both DEP and non DEP, into Jamf the methods used can be applied if you already have your whole fleet in Jamf already.
