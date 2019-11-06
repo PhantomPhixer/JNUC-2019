@@ -17,6 +17,7 @@ As the flow shows the *Build* part is common allowing simple management of the b
 
 ## Who's it aimed at? ##
 Anyone managing macs! Although developed for organisations bringing devices, both DEP and non DEP, into Jamf the methods used can be applied if you already have your whole fleet in Jamf.
+
 So as the talk said;
 
 
