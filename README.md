@@ -74,6 +74,10 @@ For the DEP process a prestage package is required to be added to the prestage. 
 
 ### Package components ###
 
+There are three items required in the DEP Package;
+
+
+![DEP Package](https://github.com/PhantomPhixer/JNUC-2019/blob/master/images/DEP-package.png)
 
 
 
