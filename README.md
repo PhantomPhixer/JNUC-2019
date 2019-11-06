@@ -128,95 +128,95 @@ killall loginwindow
 
 #### The profile ####
 
-blah
+The entire profile is embeded here;
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+<key>PayloadContent</key>
+<array>
+	<dict>
 	<key>PayloadContent</key>
-	<array>
 		<dict>
-			<key>PayloadContent</key>
+		<key>menu.nomad.login.ad</key>
 			<dict>
-				<key>menu.nomad.login.ad</key>
+			<key>Forced</key>
+			<array>
 				<dict>
-					<key>Forced</key>
-					<array>
+				<key>mcx_preference_settings</key>
+					<dict>
+					<key>NotifyLogStyle</key>
+					<string>none</string>
+					<key>BackgroundImage</key>
+					<string>/Library/Management/jigsaw24/logo-back.png</string>
+					<key>UserInputLogo</key>
+					<string>/Library/Management/jigsaw24/logo.png</string>
+					<key>UserInputMainText</key>
+					<string>Please select this computers role. Default is Shared. Select SingleUser if a dedicated laptop. Click OK to continue.</string>
+					<key>UserInputOutputPath</key>
+					<string>/var/tmp/userinputoutput.plist</string>
+					<key>UserInputTitle</key>
+					<string>Let's get building ...</string>
+					<key>UserInputUI</key>
 						<dict>
-							<key>mcx_preference_settings</key>
+						<key>Button</key>
 							<dict>
-								<key>NotifyLogStyle</key>
-								<string>none</string>
-								<key>BackgroundImage</key>
-							   <string>/Library/Management/jigsaw24/logo-back.png</string>
-								<key>UserInputLogo</key>
-								<string>/Library/Management/jigsaw24/logo.png</string>
-								<key>UserInputMainText</key>
-								<string>Please select this computers role. Default is Shared. Select SingleUser if a dedicated laptop. Click OK to continue.</string>
-								<key>UserInputOutputPath</key>
-								<string>/var/tmp/userinputoutput.plist</string>
-								<key>UserInputTitle</key>
-								<string>Let's get building ...</string>
-								<key>UserInputUI</key>
-								<dict>
-									<key>Button</key>
-									<dict>
-										<key>enabled</key>
-										<true/>
-										<key>title</key>
-										<string>OK</string>
-									</dict>
-									<key>PopUps</key>
-									<array>
-										<dict>
-											<key>items</key>
-											<array>
-												<string>Shared</string>
-												<string>Single User</string>
-											</array>
-											<key>title</key>
-											<string>Computer Role</string>
-										</dict>
-									</array>
-								</dict>
+							<key>enabled</key>
+							<true/>
+							<key>title</key>
+							<string>OK</string>
 							</dict>
+							<key>PopUps</key>
+							<array>
+							<dict>
+							<key>items</key>
+							<array>
+							<string>Shared</string>
+							<string>Single User</string>
+							</array>
+							<key>title</key>
+							<string>Computer Role</string>
+							</dict>
+							</array>
 						</dict>
-					</array>
+					</dict>
 				</dict>
-			</dict>
-			<key>PayloadDescription</key>
-			<string>NoMad Login settings</string>
-			<key>PayloadDisplayName</key>
-			<string>Custom</string>
-			<key>PayloadEnabled</key>
-			<true/>
-			<key>PayloadIdentifier</key>
-			<string>36ECC941-FAC2-4271-916D-EC614FCDB784</string>
-			<key>PayloadOrganization</key>
-			<string>Jigsaw24</string>
-			<key>PayloadType</key>
-			<string>com.apple.ManagedClient.preferences</string>
-			<key>PayloadUUID</key>
-			<string>36ECC941-FAC2-4271-916D-EC614FCDB784</string>
-			<key>PayloadVersion</key>
-			<integer>1</integer>
+			</array>
 		</dict>
-	</array>
+	</dict>
 	<key>PayloadDescription</key>
-	<string></string>
+	<string>NoMad Login settings</string>
 	<key>PayloadDisplayName</key>
-	<string>Nomad Login - Defaults</string>
+	<string>Custom</string>
 	<key>PayloadEnabled</key>
 	<true/>
 	<key>PayloadIdentifier</key>
-	<string>FF808D2C-A258-46CB-928E-41E0D7347ED2</string>
+	<string>36ECC941-FAC2-4271-916D-EC614FCDB784</string>
 	<key>PayloadOrganization</key>
 	<string>Jigsaw24</string>
-	<key>PayloadRemovalDisallowed</key>
-	<false/>
-	<key>PayloadScope</key>
+	<key>PayloadType</key>
+	<string>com.apple.ManagedClient.preferences</string>
+	<key>PayloadUUID</key>
+	<string>36ECC941-FAC2-4271-916D-EC614FCDB784</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+	</dict>
+</array>
+<key>PayloadDescription</key>
+<string></string>
+<key>PayloadDisplayName</key>
+<string>Nomad Login - Defaults</string>
+<key>PayloadEnabled</key>
+<true/>
+<key>PayloadIdentifier</key>
+<string>FF808D2C-A258-46CB-928E-41E0D7347ED2</string>
+<key>PayloadOrganization</key>
+<string>Jigsaw24</string>
+<key>PayloadRemovalDisallowed</key>
+<false/>
+<key>PayloadScope</key>
 	<string>System</string>
 	<key>PayloadType</key>
 	<string>Configuration</string>
@@ -226,6 +226,56 @@ blah
 	<integer>1</integer>
 </dict>
 </plist>
+```
+As mentioned before Neil Martins [github](https://github.com/neilmartin83/MacADUK-2019) has good explainations of the settings so here I'll just explain the important ones used in this method.
+
+##### Profile sections #####
+
+1. The graphics used by the *User_Input* screen is controlled by these settings, background is common to both screens;
+```xml
+<key>BackgroundImage</key>
+<string>/Library/Management/jigsaw24/logo-back.png</string>
+<key>UserInputLogo</key>
+<string>/Library/Management/jigsaw24/logo.png</string>
+```
+
+2. The location for the response file that gets created when the choice is made is controlled by this setting. This file is monitored by the build script as explained later;
+
+
+```xml
+<key>UserInputOutputPath</key>
+<string>/var/tmp/userinputoutput.plist</string>
+```
+3. The text displayed on the *User_Input* screen and choices displayed for the dropdown are controlled by these settings;
+
+
+```xml
+<key>UserInputMainText</key>
+<string>Please select this computers role. Default is Shared. Select SingleUser if a dedicated laptop. Click OK to continue.</string>
+<key>UserInputTitle</key>
+<string>Let's get building ...</string>
+<key>UserInputUI</key>
+<dict>
+	<key>Button</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>title</key>
+			<string>OK</string>
+		</dict>
+	<key>PopUps</key>
+	<array>
+		<dict>
+		<key>items</key>
+		<array>
+			<string>Shared</string>
+			<string>Single User</string>
+		</array>
+		<key>title</key>
+		<string>Computer Role</string>
+		</dict>
+	</array>
+</dict>
 ```
 
 
