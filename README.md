@@ -231,7 +231,7 @@ As mentioned before Neil Martins [github](https://github.com/neilmartin83/MacADU
 
 ##### Profile sections #####
 
-1. The graphics used by the *User_Input* screen is controlled by these settings, background is common to both screens;
+1. The graphics used by the *User_Input* screen is controlled by these settings, background is common to both screens. Note that the settings for the *Notify* screen are set in the post install script;
 ```xml
 <key>BackgroundImage</key>
 <string>/Library/Management/jigsaw24/logo-back.png</string>
