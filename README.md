@@ -39,7 +39,7 @@ So as the talk said;
 
 [Non DEP setup 1](https://github.com/PhantomPhixer/JNUC-2019/blob/master/NonDEP.md)
 
-[The Build](https://github.com/PhantomPhixer/JNUC-2019/blob/master/build.md)
+[The Common Build](https://github.com/PhantomPhixer/JNUC-2019/blob/master/build.md)
 
 
 
