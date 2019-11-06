@@ -92,3 +92,50 @@ The script has a few key functions that control what happens and when. These are
 4. Kill the Loginwindow to start NoMAD login
 5. run the QuickAdd to enroll in jamf and start the [build process](https://github.com/PhantomPhixer/JNUC-2019/blob/master/build.md). 
 
+#### Check _mbsetupuser active ####
+
+The first check is that *_mbsetupuser* is active. This user becomes active when the setup wizard starts so this is the time to start processing the script;
+
+```bash
+# Wait for MBSetup User
+
+mbSetupLoggedIn=0
+
+until [ $mbSetupLoggedIn -gt 0 ]; do
+	if [ "$loggedInUser" == "_mbsetupuser" ]; then
+		mbSetupLoggedIn=1
+	else
+		sleep 1
+		loggedInUser=$(/usr/sbin/scutil <<< "show State:/Users/ConsoleUser" | /usr/bin/awk -F': ' '/[[:space:]]+Name[[:space:]]:/ { if ( $2 != "loginwindow" ) { print $2 }}     ')
+	fi
+done
+```
+
+#### Setup NoMAD ####
+
+As soon as the setup screens start NoMAD can be installed so the script calls a function for that;
+
+```bash
+setupNoMAD () {
+
+# Install NoMAD Profile
+/usr/bin/profiles -I -F "$installersPath"menu.nomad.login.ad.mobileconfig
+
+# Install NoLo and graphics
+/usr/sbin/installer -pkg "$installersPath"NoMAD-Login-AD.pkg -target /
+
+/usr/local/bin/authchanger authchanger -reset -preLogin NoMADLoginAD:UserInput NoMADLoginAD:Notify
+
+/bin/echo "Command: MainTitle: Setting things up - NON DEP"  >> /var/tmp/depnotify.log
+/bin/echo "Command: MainText: Starting mac build, progress screens will display shortly.\n \n This is a non DEP build. \n \n The MDM Profile will need accepting at first logon" >> /var/tmp/depnotify.log
+/bin/echo "Command: Image: "/Library/Management/jigsaw24/logo.png"" >> /var/tmp/depnotify.log
+/bin/echo "Status: Please wait..." >> /var/tmp/depnotify.log
+
+}
+```
+
+In this function a key line is ```/usr/local/bin/authchanger authchanger -reset -preLogin NoMADLoginAD:UserInput NoMADLoginAD:Notify``` which is setting the login window environment.
+
+**authchanger** is used to manipulate the PAM order for the login window. 
+```authchanger - reset``` sets the order back to default, used to ensure a known starting point.
+```-preLogin NoMADLoginAD:UserInput NoMADLoginAD:Notify``` sets *UserInput* as the first screen to display followed by *Notify* when *UserInput* closes. 
