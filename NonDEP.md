@@ -170,3 +170,13 @@ using ```touch /var/db/.AppleSetupDone``` stops the setup wizard running any mor
 
 ```killall loginwindow``` kills the loginwindow process which then starts again using the new setting set by *authchanger*, which is the same method as the DEP build uses to change screens.
 
+
+#### start the build ####
+
+Starting off the build is simply a case of installing the QuickAdd;
+
+```bash
+/usr/sbin/installer -pkg "$installersPath"QuickAdd.pkg -target /
+```
+
+
