@@ -7,6 +7,10 @@ Lot's of organisations have devices that can't be DEP built for many reasons.
 The overall end aim of this workflow is to get all devices managed in Jamf and then to automatically be able to wipe and reprovision the device.
 The only major difference between the two workflows, DEP and Non DEP, is the requirement for a user to approve the MDM profile in the Non DEP build devices, which can't be avoided.
 
+### --eraseinstall ###
+Since macOS 10.13.4, subject to th edisk being APFS format, there has been an option: *--eraseinstall*, in the macOS installer to erase the system and put a clean OS install on the disk, as if it had just come out of the box.
+Another of the available options is *--installpackage* which allows packages to be installed after the OS is built but immediately prior to the setup screens starting. This is explained well on [*Der Flounder*](https://derflounder.wordpress.com/2017/09/26/using-the-macos-high-sierra-os-installers-startosinstall-tool-to-install-additional-packages-as-post-upgrade-tasks/) blog.
+
 
 ## Experience ##
 The overall experience will be the same NoMAD Login choice and notify experience as used in the DEP build out lined [here](https://github.com/PhantomPhixer/JNUC-2019/blob/master/DEP.md).
@@ -46,6 +50,10 @@ The *NoMAD-Login-AD* package and the *menu.nomad.login.ad.mobileconfig* are the 
 
 ### Graphics Package ###
 
-The graphics package is the same one bundled into the DEP prestage package.
+The graphics package is the same one bundled into the DEP prestage package. These graphics are equally useable by DEPNotify or Jamf Helper or indeed any user facing notification method.
 
 ![Graphics Package](https://github.com/PhantomPhixer/JNUC-2019/blob/master/images/graphics.png)
+
+## The Control Script ##
+
+
