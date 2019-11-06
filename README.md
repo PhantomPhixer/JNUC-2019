@@ -48,5 +48,10 @@ This screen can be configured with many input choices dependant upon requirement
 
 Then when the selection is made the screen changes to this one,
 
+![NoMAD Notify](https://github.com/PhantomPhixer/JNUC-2019/blob/master/images/notify-screen.png)
+
+
+
+
 
 
