@@ -9,7 +9,7 @@ The only major difference between the two workflows, DEP and Non DEP, is the req
 
 
 ## Experience ##
-The overall experience will be the same type choice and notify experience as used in the DEP build out lined [here](https://github.com/PhantomPhixer/JNUC-2019/blob/master/DEP.md).
+The overall experience will be the same type NoMAD Login type choice and notify experience as used in the DEP build out lined [here](https://github.com/PhantomPhixer/JNUC-2019/blob/master/DEP.md).
 
 ## Package ##
 
