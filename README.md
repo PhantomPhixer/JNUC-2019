@@ -68,11 +68,12 @@ In the JNUC talk I kept things simple so the build screen looked like this;
 
 ![NoMAD Build Screen](https://github.com/PhantomPhixer/JNUC-2019/blob/master/images/build-screen.png)
 
-# How to build this so far #
+## How to build this ##
 
 For the DEP process a prestage package is required to be added to the prestage. This gets pulled down once the user accepts the remote management screen. So this package controls the screens shown before the Jamf post enrol policy starts.
 
 ### Package components ###
+
 
 
 
