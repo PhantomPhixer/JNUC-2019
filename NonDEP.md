@@ -41,4 +41,5 @@ The *NoMAD-Login-AD* package and the *menu.nomad.login.ad.mobileconfig* are the 
 1. *QuickAdd.pkg* This is created as per the organisations standards using the Jamf Recon app.
     * A separate *Jamf management account* is used in the demo, whilst not strictly necessary but comes in handy for later    scoping or reporting activities.
 
-
+2. Controlling script and LaunchDaemon.
+3. No Graphics! These are installed as a separate package. I could not reliably get the graphics to display when installed from this package so separated them out.
