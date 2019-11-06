@@ -57,5 +57,30 @@ The graphics package is the same one bundled into the DEP prestage package. Thes
 ![Graphics Package](https://github.com/PhantomPhixer/JNUC-2019/blob/master/images/graphics.png)
 
 ## The Control Script ##
+The control script, **build_check_mbsetup_script.sh**, is called from the LaunchDaemon, **com.jigsaw24.build_check.plist**, in the package. This is started by the post install script in the package.
+This is because when performing the *--eraseinstall* the package installs immediately follows the OS setup and are in turn immediately followed by the setup screens, meaning that the LaunchDaemon must be loaded by the install or it will not start until the device is restarted, which is no use to this process.
+
+
+### LaunchDaemon ###
+
+The LaunchDaemon is a simple one to run the script and is used to run it with **root** privileges
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Label</key>
+	<string>com.jigsaw24.build_check</string>
+	<key>RunAtLoad</key>
+	<true/>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/Library/Management/installs/build_check_mbsetup_script.sh</string>
+	</array>
+</dict>
+</plist>
+```
+
 
 
