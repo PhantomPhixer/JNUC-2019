@@ -79,6 +79,25 @@ There are three items required in the DEP Package;
 
 ![DEP Package](https://github.com/PhantomPhixer/JNUC-2019/blob/master/images/DEP-package.png)
 
+1. NoMAD Login: Some choose to modify the original packages to include everything required, I find it's easier and less problematical to use the standard package in a custom package.
+2. The profile to configure NoMAD login: The setting for this are covered on Neil Martins [github](https://github.com/neilmartin83/MacADUK-2019). In this only one dropdown is configured, the profile will be shown later.
+3. Graphics: a simple package containing two graphics, one used as the background and one for the logo displayed at the top.
+
+There is a package post install script which starts the process off as well.
+This has three required blocks;
+
+```bash
+# perform Installs
+log "installing profile"
+/usr/bin/profiles -I -F "/var/tmp/menu.nomad.login.ad.mobileconfig"
+log "installing graphics"
+installer -pkg "/var/tmp/jnuc-build-graphics.pkg" -target /
+log "installing nomad"
+installer -pkg "/var/tmp/NoMAD-Login-AD.pkg" -target /
+```
+
+
+
 
 
 
