@@ -253,3 +253,10 @@ The created package is uploaded to jamf and added to the prestage;
 As this build is designed to be used with either AD binding, Jamf Connect or NoMAD login no user account creation is required during the prestage, set this like so;
 
 ![Prestage-package](https://github.com/PhantomPhixer/JNUC-2019/blob/master/images/prestage-account.png)
+
+## The build ##
+
+when all this is setup devices in DEP can be built as normal by booting up and going through the wizard and accepting the remote management screen.
+
+[The Build](https://github.com/PhantomPhixer/JNUC-2019/blob/master/build.md) is now running.
+
