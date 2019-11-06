@@ -33,7 +33,8 @@ So as the talk said;
 
 ---
 
-
+## Pages ##
+[DEP Build](https://github.com/PhantomPhixer/JNUC-2019/blob/master/images/DEP.md)
 
 
 
