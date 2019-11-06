@@ -35,9 +35,9 @@ So as the talk said;
 
 ## Sections ##
 
-[DEP Start](https://github.com/PhantomPhixer/JNUC-2019/blob/master/DEP.md)
+[DEP setup 1](https://github.com/PhantomPhixer/JNUC-2019/blob/master/DEP.md)
 
-[Non DEP Start](https://github.com/PhantomPhixer/JNUC-2019/blob/master/NonDEP.md)
+[Non DEP setup 1](https://github.com/PhantomPhixer/JNUC-2019/blob/master/NonDEP.md)
 
 [The Build](https://github.com/PhantomPhixer/JNUC-2019/blob/master/build.md)
 
