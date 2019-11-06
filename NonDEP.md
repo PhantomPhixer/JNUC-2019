@@ -32,4 +32,13 @@ There is also a simple **post install script** to load the LaunchDaemon;
 ```bash
 launchctl load /Library/LaunchDaemons/com.jigsaw24.build_check.plist
 ```
+#### Common items ####
+
+The *NoMAD-Login-AD* package and the *menu.nomad.login.ad.mobileconfig* are the same ones used in the [DEP build](https://github.com/PhantomPhixer/JNUC-2019/blob/master/DEP.md)
+
+#### differences ####
+
+1. *QuickAdd.pkg* This is created as per the organisations standards using the Jamf Recon app.
+    * A separate *Jamf management account* is used in the demo, whilst not strictly necessary but comes in handy for later    scoping or reporting activities.
+
 
