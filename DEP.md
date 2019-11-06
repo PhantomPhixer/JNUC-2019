@@ -243,3 +243,13 @@ As mentioned before Neil Martins [github](https://github.com/neilmartin83/MacADU
 	</array>
 </dict>
 ```
+
+## The Prestage ##
+
+The created package is uploaded to jamf and added to the prestage;
+
+![Prestage-package](https://github.com/PhantomPhixer/JNUC-2019/blob/master/images/prestage-package.png)
+
+As this build is designed to be used with either AD binding, Jamf Connect or NoMAD login no user account creation is required during the prestage, set this like so;
+
+![Prestage-package](https://github.com/PhantomPhixer/JNUC-2019/blob/master/images/prestage-account.png)
