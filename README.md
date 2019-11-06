@@ -43,5 +43,5 @@ So as the talk said;
 
 [UAMDM](https://github.com/PhantomPhixer/JNUC-2019/blob/master/UAMDM.md)
 
-[Rinse and repeat](https://github.com/PhantomPhixer/JNUC-2019/blob/master/Rinse and repeat.md)
+[Rinse and repeat](https://github.com/PhantomPhixer/JNUC-2019/blob/master/Rinse_and_repeat.md)
 
