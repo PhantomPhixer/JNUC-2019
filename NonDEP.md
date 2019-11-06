@@ -11,13 +11,15 @@ The only major difference between the two workflows, DEP and Non DEP, is the req
 Since macOS 10.13.4, subject to th edisk being APFS format, there has been an option: *--eraseinstall*, in the macOS installer to erase the system and put a clean OS install on the disk, as if it had just come out of the box.
 Another of the available options is *--installpackage* which allows packages to be installed after the OS is built but immediately prior to the setup screens starting. This is explained well on [*Der Flounder*](https://derflounder.wordpress.com/2017/09/26/using-the-macos-high-sierra-os-installers-startosinstall-tool-to-install-additional-packages-as-post-upgrade-tasks/) blog.
 
+The *--eraseinstall* coupled with the *--installpackage* are the cornerstone of this Non DEP build.
+
 
 ## Experience ##
 The overall experience will be the same NoMAD Login choice and notify experience as used in the DEP build out lined [here](https://github.com/PhantomPhixer/JNUC-2019/blob/master/DEP.md).
 
 ## Packages ##
 
-The packages used in this workflow will be explained here, how to use them will be explained later.
+The packages used in this workflow will be explained here, how to use them will be explained later. These packages are what will be installed using the *--installpackage* option. On the command line multiple *--installpackage* options can be added to allow the install of several packages.
 
 ### Package components ###
 
