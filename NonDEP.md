@@ -82,5 +82,13 @@ The LaunchDaemon is a simple one to run the script and is used to run it with **
 </plist>
 ```
 
+### The Script ###
 
+The script has a few key functions that control what happens and when. These are;
+
+1. Check *_mbsetupuser* is active
+2. Install NoMAD Login, the profile and set the login window environment to use NoMAD
+3. Wait until network up and Jamf contactable
+4. Kill the Loginwindow to start NoMAD login
+5. run the QuickAdd to enroll in jamf and start the [build process](https://github.com/PhantomPhixer/JNUC-2019/blob/master/build.md). 
 
