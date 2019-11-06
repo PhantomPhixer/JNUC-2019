@@ -22,11 +22,11 @@ There are five items required in the Non DEP Package;
 
 ![NonDEP Package](https://github.com/PhantomPhixer/JNUC-2019/blob/master/images/nondep-package.png)
 
-1. NoMAD Login: Some choose to modify the original packages to include everything required, I find it's easier and less problematical to use the standard package in a custom package.
-2. The profile to configure NoMAD login: The setting for this are covered on Neil Martins [github](https://github.com/neilmartin83/MacADUK-2019). In this only one dropdown is configured, the profile will be shown later.
-3. QuickAdd: Create a QuickAdd with Jamf recon, used to enroll the device during the build.
-4. The controlling script; explained later.
-5. LaunchDaemon: used to start the script running.
+1. NoMAD Login.
+2. The profile to configure NoMAD login.
+3. QuickAdd.
+4. The controlling script.
+5. LaunchDaemon.
 
 There is also a simple **post install script** to load the LaunchDaemon;
 ```bash
@@ -36,7 +36,7 @@ launchctl load /Library/LaunchDaemons/com.jigsaw24.build_check.plist
 
 The *NoMAD-Login-AD* package and the *menu.nomad.login.ad.mobileconfig* are the same ones used in the [DEP build](https://github.com/PhantomPhixer/JNUC-2019/blob/master/DEP.md)
 
-#### differences ####
+#### Differences ####
 
 1. *QuickAdd.pkg* This is created as per the organisations standards using the Jamf Recon app.
     * A separate *Jamf management account* is used in the demo, whilst not strictly necessary but comes in handy for later    scoping or reporting activities.
