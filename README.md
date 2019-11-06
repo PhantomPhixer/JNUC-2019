@@ -64,6 +64,12 @@ The next stage is the actual *build* where all the required applications and pro
 The notify screen text and graphics are driven using [DEPNotify](https://gitlab.com/Mactroll/DEPNotify) commands which makes it easy to control.
 In an earlier talk I spoke to the [LAA](https://londonappleadmins.org.uk/) about many uses of DEPNotify, the ideas used there for build progeress screens are directly transferable to this build process, you can find that talk [here](https://montysmacmusings.wordpress.com/2018/12/24/depnotify-to-dep-and-beyond/).
 
+In the JNUC talk I kept things simple so the build screen looked like this;
+
+![NoMAD Build Screen](https://github.com/PhantomPhixer/JNUC-2019/blob/master/images/build-screen.png)
+
+
+
 
 
 
