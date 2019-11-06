@@ -50,7 +50,19 @@ Then when the selection is made the screen changes to this one,
 
 ![NoMAD Notify](https://github.com/PhantomPhixer/JNUC-2019/blob/master/images/notify-screen.png)
 
+What and how the choice affects the build will be covered later.
 
+## The Build Process progress screens ###
+
+The next stage is the actual *build* where all the required applications and profiles are deployed. After enrollment a policy runs that contains a script that controls the entire build. This performs the following things;
+1. Waits for the choice before proceeding
+2. Sends messages to the NoMAD Notify screen
+3. Calls any install policies using custom trigger; e.g. *jamf policy -event install-chrome*
+4. sets the post build logon environment to use either native mac logon or any of the Jamf connect or NoMAD login windows as required.
+5. It also preforms any other functions related to this stage of the build.
+
+The notify screen text and graphics are driven using [DEPNotify](https://gitlab.com/Mactroll/DEPNotify) commands which makes it easy to control.
+In an earlier talk I spoke to the [LAA](https://londonappleadmins.org.uk/) about many uses of DEPNotify, the ideas used there for build progeress screens are directly transferable to this build process, you can find that talk [here](https://montysmacmusings.wordpress.com/2018/12/24/depnotify-to-dep-and-beyond/).
 
 
 
