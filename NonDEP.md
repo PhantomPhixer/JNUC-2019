@@ -179,4 +179,30 @@ Starting off the build is simply a case of installing the QuickAdd;
 /usr/sbin/installer -pkg "$installersPath"QuickAdd.pkg -target /
 ```
 
+#### and finally ####
 
+Just to tidy up it waits until jamf is installed and removes itself
+
+```bash
+# Wait for the jamf binary to be installed
+while [ ! -f /usr/local/bin/jamf ]
+do
+	sleep 2
+done
+
+# Wait for the enrolment profile to appear
+MDMProfilePresent=$(profiles status -type enrollment | grep "MDM" | awk -F":" '{ print $2}' | sed 's/ //' | grep -o Yes)
+
+while [ "$MDMProfilePresent" = "" ]
+do
+	sleep 2
+done
+echo "MDM profile installed"
+
+rm -f "/Library/LaunchDaemons/com.jigsaw24.build_check.plist"
+rm -f "/Library/Management/installs/build_check_mbsetup_script.sh"
+```
+
+## The build ##
+
+[The Build](https://github.com/PhantomPhixer/JNUC-2019/blob/master/build.md) is now running.
