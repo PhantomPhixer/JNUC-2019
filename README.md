@@ -33,8 +33,13 @@ So as the talk said;
 
 ---
 
-## Pages ##
-[DEP Build](https://github.com/PhantomPhixer/JNUC-2019/blob/master/DEP.md)
+## Sections ##
+
+[DEP Start](https://github.com/PhantomPhixer/JNUC-2019/blob/master/DEP.md)
+
+[Non DEP Start](https://github.com/PhantomPhixer/JNUC-2019/blob/master/NonDEP.md)
+
+[The Build](https://github.com/PhantomPhixer/JNUC-2019/blob/master/build.md)
 
 
 
