@@ -139,3 +139,34 @@ In this function a key line is ```/usr/local/bin/authchanger authchanger -reset 
 **authchanger** is used to manipulate the PAM order for the login window. 
 ```authchanger - reset``` sets the order back to default, used to ensure a known starting point.
 ```-preLogin NoMADLoginAD:UserInput NoMADLoginAD:Notify``` sets *UserInput* as the first screen to display followed by *Notify* when *UserInput* closes. 
+
+#### check network ####
+
+Need to establish that the network is up and Jamf contactable or there will be no point running the quickadd, to do this a simple check loop is used;
+
+```bash
+internetLive=0
+
+until [ "$internetLive" == "200" ]; do	
+	internetLive=$(curl -s -k https://myjss.jamfcloud.com/healthCheck.html --write-out %{http_code} -o /dev/null)
+	sleep 1
+done
+```
+The build process will move on automatically if using ethernet that doesn't need authentication or on a VM. If using WiFi the setup will step through as normal to until WiFi is connected.
+
+#### switch login window ####
+
+To change from the setup screens to the NoMAD login screens setup previously this is used;
+
+```bash
+# Create AppleSetupDone File
+touch /var/db/.AppleSetupDone
+
+# Restart loginwindow
+killall loginwindow
+```
+
+using ```touch /var/db/.AppleSetupDone``` stops the setup wizard running any more or at next startup
+
+```killall loginwindow``` kills the loginwindow process which then starts again using the new setting set by *authchanger*, which is the same method as the DEP build uses to change screens.
+
