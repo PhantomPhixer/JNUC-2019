@@ -43,3 +43,9 @@ The *NoMAD-Login-AD* package and the *menu.nomad.login.ad.mobileconfig* are the 
 
 2. Controlling script and LaunchDaemon.
 3. No Graphics! These are installed as a separate package. I could not reliably get the graphics to display when installed from this package so separated them out.
+
+### Graphics Package ###
+
+The graphics package is the same one bundled into the DEP prestage package.
+
+![Graphics Package](https://github.com/PhantomPhixer/JNUC-2019/blob/master/images/graphics.png)
