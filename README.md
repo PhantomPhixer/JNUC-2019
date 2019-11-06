@@ -84,20 +84,47 @@ There are three items required in the DEP Package;
 3. Graphics: a simple package containing two graphics, one used as the background and one for the logo displayed at the top.
 
 There is a package post install script which starts the process off as well.
-This has three required blocks;
+This has four required blocks;
+1. Install the packages and the profile.
 
 ```bash
 # perform Installs
-log "installing profile"
 /usr/bin/profiles -I -F "/var/tmp/menu.nomad.login.ad.mobileconfig"
-log "installing graphics"
+
 installer -pkg "/var/tmp/jnuc-build-graphics.pkg" -target /
-log "installing nomad"
+
 installer -pkg "/var/tmp/NoMAD-Login-AD.pkg" -target /
 ```
+2. Set the initial NoMAD Login environment
 
+```bash
+# set initial notify values
+log "running Authchanger"
+/usr/local/bin/authchanger authchanger -reset -preLogin NoMADLoginAD:UserInput NoMADLoginAD:Notify
 
+/bin/echo "Command: MainTitle: Setting things up…"  >> /var/tmp/depnotify.log
+/bin/echo "Command: MainText: Starting the device build, progress screens will display shortly." >> /var/tmp/depnotify.log
+/bin/echo "Command: Image: "/Library/Management/jigsaw24/logo.png"" >> /var/tmp/depnotify.log
+/bin/echo "Status: Please wait..." >> /var/tmp/depnotify.log
+```
 
+3. Wait for Setup asistant to complete
+```bash
+# Wait for the setup assistant to complete before continuing
+
+loggedInUser=$(/usr/sbin/scutil <<< "show State:/Users/ConsoleUser" | /usr/bin/awk -F': ' '/[[:space:]]+Name[[:space:]]:/ { if ( $2 != "loginwindow" ) { print $2 }}     ')
+while [[ "$loggedInUser" == "_mbsetupuser" ]]; do
+	/bin/sleep 1
+	loggedInUser=$(/usr/sbin/scutil <<< "show State:/Users/ConsoleUser" | /usr/bin/awk -F': ' '/[[:space:]]+Name[[:space:]]:/ { if ( $2 != "loginwindow" ) { print $2 }}     ')
+done
+```
+
+4. Kill login window to switch to NoMAD Login
+```bash
+# switch login window
+
+killall loginwindow
+```
 
 
 
