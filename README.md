@@ -41,5 +41,7 @@ So as the talk said;
 
 [The Common Build](https://github.com/PhantomPhixer/JNUC-2019/blob/master/build.md)
 
+[UAMDM](https://github.com/PhantomPhixer/JNUC-2019/blob/master/UAMDM.md)
 
+[Rinse and repeat](https://github.com/PhantomPhixer/JNUC-2019/blob/master/Rinse and repeat.md)
 
