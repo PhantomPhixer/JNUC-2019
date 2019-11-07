@@ -96,4 +96,23 @@ echo "<result>$type</result>"
 This now means the device will fall into, or out of, any applicable smart groups.
 
 
+#### Install applications from policies ####
 
+The main crux of the script now centres on deploying all the required applications. This is done by repeating blocks of scipt calling each install policy in turn;
+
+```bash
+/bin/echo "Status: Installing Jamf Connect" >> /var/tmp/depnotify.log
+/usr/local/bin/jamf policy -event install-jcl-live
+```
+In this simple example only the status line is updated however the Notify screen could be used to provide a rich user information screen with display related to what is being installed as this example shows;
+
+```bash
+############################
+# install cisco anyconnect #
+############################
+echo "Command: MainTitle: Cisco AnyConnect VPN" >> /var/tmp/depnotify.log
+echo "Command: MainText: Need to work outside the office? You can connect to our systems such as shared folders and stuff by using the AnyConnect VPN. \n Look for the AnyConnect icon in the dock, click Connect and enter your staff credentials to login." >> /var/tmp/depnotify.log
+echo "Status: Installing Cisco Anyconnect VPN" >> /var/tmp/depnotify.log
+echo "Command: Image: "/Library/jigsaw24/Pictures/anyconnect.png"" >> /var/tmp/depnotify.log
+/usr/local/bin/jamf policy -event install-anyconnect-live
+```
