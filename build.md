@@ -149,4 +149,13 @@ echo "<result>$result</result>"
 #### reset login window ####
 
 As this build uses NoMAD login preauth mechanisms these can't be left enabled or the device will constantly use these mechanisms at restart so *authchanger* must be used to reset back to standard and set whichever login client is required.
-In this example Jamf Connect has been installed and will be used in the *-OIDC*  method.
+In this example Jamf Connect has been installed and will be used in the *-OIDC* method.
+
+```bash
+log "Resetting Login Window..."
+/usr/local/bin/authchanger -reset -OIDC
+ 
+/usr/bin/profiles -R -p FF808D2C-A258-46CB-928E-41E0D7347ED2
+```
+For completeness the NoMAD profile is also removed.
+
