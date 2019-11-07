@@ -55,4 +55,13 @@ computerRole=$(/usr/libexec/plistbuddy /var/tmp/userinputoutput.txt -c "print 'C
 /bin/echo "Command: MainTitle: Setting things up..."  >> /var/tmp/depnotify.log
 /bin/echo "Command: MainText: Please wait while we set this Mac up with the software and settings it needs.\n We'll restart automatically when we're finished. \n \n Role: "$computerRole" Mac \n Serial Number: "$serial" \n macOS Version: "$osversion""  >> /var/tmp/depnotify.log
 ```
+When this happens the screen will change from this;
+
+![Build start](https://github.com/PhantomPhixer/JNUC-2019/blob/master/images/buildscreen-1.png)
+
+to this;
+
+![Build main](https://github.com/PhantomPhixer/JNUC-2019/blob/master/images/buildscreen-2.png)
+
+
 
