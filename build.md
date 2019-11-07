@@ -159,3 +159,7 @@ log "Resetting Login Window..."
 ```
 For completeness the NoMAD profile is also removed.
 
+### Example Script ###
+
+
+[An example script is here](../master/files/build-notify-window.sh)
