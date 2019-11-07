@@ -152,7 +152,7 @@ until [ "$internetLive" == "200" ]; do
 	sleep 1
 done
 ```
-The build process will move on automatically if using ethernet that doesn't need authentication or on a VM. If using WiFi the setup will step through as normal to until WiFi is connected.
+The build process will move on automatically if using ethernet that doesn't need authentication or on a VM. If using WiFi the setup will step through as normal until WiFi is connected.
 
 #### switch login window ####
 
