@@ -203,6 +203,39 @@ rm -f "/Library/LaunchDaemons/com.jigsaw24.build_check.plist"
 rm -f "/Library/Management/installs/build_check_mbsetup_script.sh"
 ```
 
+## How to use this ##
+
+
+### MDS ###
+once the required packages have been created the easiest way to initially use this workflow to get devices into Jamf os using [MDS](http://twocanoes.com/products/mac/mac-deploy-stick/)
+
+This also utilizes the *--eraseinstall* and the *--installpaclage* switches behind a nice easy to use GUI. I won't explian the full working of MDS however the two setup panes required are these;
+
+Add the macOS installer app
+
+![MDS OS Installer](https://github.com/PhantomPhixer/JNUC-2019/blob/master/images/MDS-1.png)
+
+
+Place the two packages in a folder and point the MDS app to that folder
+
+![MDS Extras](https://github.com/PhantomPhixer/JNUC-2019/blob/master/images/MDS-2.png)
+
+The MDS disk can then be created.
+
+A workflow for DEP builds can also be created that only uses the macOS installer app as nothing else is required.
+
+### wipe the device ###
+
+To wipe the device and start the process boot to recovery partition then insert the MDS key.
+Using **terminal** in the recovery partition start MDS using a command like
+```/Volumes/MDSDisk/run```
+
+this looks like this;
+
+![MDS Run](https://github.com/PhantomPhixer/JNUC-2019/blob/master/images/MDS-3.png)
+
+Start the workflow and macOS and the extra packages will installed 
+
 ## The build ##
 
 [The Build](https://github.com/PhantomPhixer/JNUC-2019/blob/master/build.md) is now running.
