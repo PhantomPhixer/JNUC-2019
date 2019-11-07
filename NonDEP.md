@@ -238,4 +238,6 @@ Start the workflow and macOS and the extra packages will installed
 
 ## The build ##
 
-[The Build](https://github.com/PhantomPhixer/JNUC-2019/blob/master/build.md) is now running.
+[The Build](https://github.com/PhantomPhixer/JNUC-2019/blob/master/build.md) follows.
+
+[UAMDM](https://github.com/PhantomPhixer/JNUC-2019/blob/master/UAMDM.md) follows the build
