@@ -38,6 +38,21 @@ while [[ ! -f /var/tmp/userinputoutput.txt ]]; do
 	/bin/sleep 2
 done
 ```
+When the file is created the build can move on.
 
+#### Identify the role and change the NoMAD screen ####
 
+Now the selection has been made it needs to be read for use and displayed on the Notify screen as a visual indication the build is proceeding.
+As mentioned before the Notify screen commands are the same as those used by DEPNotify. Note that in these commands some variables are defined previously and are fairly standard scripting variables.
+
+```bash
+# Let's read the user data into a variable...
+computerRole=$(/usr/libexec/plistbuddy /var/tmp/userinputoutput.txt -c "print 'Computer Role'")
+    
+# Carry on with the setup...
+
+# Change DEPNotify title and text...
+/bin/echo "Command: MainTitle: Setting things up..."  >> /var/tmp/depnotify.log
+/bin/echo "Command: MainText: Please wait while we set this Mac up with the software and settings it needs.\n We'll restart automatically when we're finished. \n \n Role: "$computerRole" Mac \n Serial Number: "$serial" \n macOS Version: "$osversion""  >> /var/tmp/depnotify.log
+```
 
