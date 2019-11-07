@@ -55,13 +55,45 @@ computerRole=$(/usr/libexec/plistbuddy /var/tmp/userinputoutput.txt -c "print 'C
 /bin/echo "Command: MainTitle: Setting things up..."  >> /var/tmp/depnotify.log
 /bin/echo "Command: MainText: Please wait while we set this Mac up with the software and settings it needs.\n We'll restart automatically when we're finished. \n \n Role: "$computerRole" Mac \n Serial Number: "$serial" \n macOS Version: "$osversion""  >> /var/tmp/depnotify.log
 ```
-When this happens the screen will change from this;
+When this happens the screen will change from this set by the *prestage* or *Non DEP* package (Non DEP variant shown);
 
 ![Build start](https://github.com/PhantomPhixer/JNUC-2019/blob/master/images/buildscreen-1.png)
 
 to this;
 
 ![Build main](https://github.com/PhantomPhixer/JNUC-2019/blob/master/images/buildscreen-2.png)
+
+Which shows useful infomation.
+
+#### update device type in Jamf ####
+
+In order to allow different profiles and policies to deploy the device type is used in a Jamf **Extention Attribute** which is used in **Smart Groups** for scoping.
+
+The next part of the script ensures this is set during the build process allowing any scoped profiles to deploy immediately.
+
+```bash
+echo "$computerRole" > /Library/Management/jigsaw24/build_type
+
+log "run recon to update everything" 
+/bin/echo "Status: Updating inventory" >> /var/tmp/depnotify.log
+/usr/local/bin/jamf recon
+```
+This part of the script sets the file to contain the device type, updates the Notify screen status bar and then runs an inventory.
+
+The actual EA in Jamf is a script type;
+
+```bash
+#!/bin/bash
+
+type="NA"
+
+if [ -f /Library/Management/jigsaw24/build_type ]; then
+type=$(cat /Library/Management/jigsaw24/build_type)
+fi
+
+echo "<result>$type</result>"
+```
+This now means the device will fall into, or out of, any applicable smart groups.
 
 
 
