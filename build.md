@@ -116,3 +116,37 @@ echo "Status: Installing Cisco Anyconnect VPN" >> /var/tmp/depnotify.log
 echo "Command: Image: "/Library/jigsaw24/Pictures/anyconnect.png"" >> /var/tmp/depnotify.log
 /usr/local/bin/jamf policy -event install-anyconnect-live
 ```
+
+#### Build complete ####
+
+In my builds I like to set a *build_complet* flag which is read by an EA and also used for scoping things that need deploying only after the build is run.
+
+```bash
+
+# set build complete flag
+touch /Library/Management/jigsaw24/build-complete
+# Run a recon
+/bin/echo "Status: Updating inventory..." >> /var/tmp/depnotify.log
+log "Running recon..."
+/usr/local/bin/jamf recon
+```
+
+This EA is also a script type;
+
+```bash
+#!/bin/bash
+#EA to record build completed status
+
+result="NA"
+
+if [ -f /Library/Management/jigsaw24/build-complete ]; then
+result=yes
+fi
+
+echo "<result>$result</result>"
+```
+
+#### reset login window ####
+
+As this build uses NoMAD login preauth mechanisms these can't be left enabled or the device will constantly use these mechanisms at restart so *authchanger* must be used to reset back to standard and set whichever login client is required.
+In this example Jamf Connect has been installed and will be used in the *-OIDC*  method.
