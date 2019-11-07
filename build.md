@@ -80,7 +80,7 @@ log "run recon to update everything"
 ```
 This part of the script sets the file to contain the device type, updates the Notify screen status bar and then runs an inventory.
 
-The actual EA in Jamf is a script type;
+The actual  EA in Jamf is a script type;
 
 ```bash
 #!/bin/bash
