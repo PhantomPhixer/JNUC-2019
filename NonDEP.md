@@ -207,7 +207,7 @@ rm -f "/Library/Management/installs/build_check_mbsetup_script.sh"
 
 
 ### MDS ###
-once the required packages have been created the easiest way to initially use this workflow to get devices into Jamf os using [MDS](http://twocanoes.com/products/mac/mac-deploy-stick/)
+once the required packages have been created the easiest way to initially use this workflow to get devices into Jamf is using [MDS](http://twocanoes.com/products/mac/mac-deploy-stick/)
 
 This also utilizes the *--eraseinstall* and the *--installpaclage* switches behind a nice easy to use GUI. I won't explian the full working of MDS however the two setup panes required are these;
 
