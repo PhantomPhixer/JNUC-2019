@@ -66,4 +66,6 @@ This prevents prompting the user if they have approved the MDM profile but Jamf 
 
 If the MDM profile does need approving there are many options to tell them, in this example *Self Service* is opened because this will give the user a nice pictorial guide.
 
+![Self Service](https://github.com/PhantomPhixer/JNUC-2019/blob/master/images/UAMDM-4.png)
+
 
