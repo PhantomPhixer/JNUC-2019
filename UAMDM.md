@@ -10,6 +10,9 @@ Apple do not allow any way of automating the approval process so it has to be an
 
 ## How to Prompt A User ##
 
+
+### Smart Group ###
+
 To prompt a user first we need to target the relevant devices. Jamf has a built in attribute **User approved MDM** which is set to *yes* when approved.
 
 Use this in a *smart group* to scope the policy, shown later.
