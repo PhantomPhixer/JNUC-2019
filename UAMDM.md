@@ -28,3 +28,42 @@ The policy updates inventory every run to ensure the device drops out of scope i
 
 ![UAMDM Policy](https://github.com/PhantomPhixer/JNUC-2019/blob/master/images/UAMDM-3.png)
 
+The policy calls a simple script this example which checks the UAMDM status before doing anything;
+
+The first part of the script checks the UAMDM status;
+
+```bash
+isMDMEnrolled=$(profiles status -type enrollment | grep "MDM" | awk -F":" '{ print $2}' | sed 's/ //' | grep -o Yes)
+
+isMDMUserApproved=$(profiles status -type enrollment | grep "MDM" | awk -F":" '{ print $2}' | sed 's/ //' | grep -o "User Approved")
+
+if [ "$isMDMEnrolled" = "Yes" ]; then
+MDMStatus="enrolled"
+	if [ "$isMDMUserApproved" = "User Approved" ]; then
+	MDMStatus="approved"
+	fi
+else
+	MDMStatus="none"
+fi
+```
+
+The variable *`$MDMStatus`* is used in a case statement to check if action is required or not;
+
+```bash
+case $MDMStatus in
+"approved" )
+secho "Finished **********"
+exit 0
+;;
+"enrolled" )
+notifyUserToApprove
+exit 0
+;;
+esac
+```
+
+This prevents prompting the user if they have approved the MDM profile but Jamf doesn't have the information in inventory. The policy would then update invemtory and move the device out of scope.
+
+If the MDM profile does need approving there are many options to tell them, in this example *Self Service* is opened because this will give the user a nice pictorial guide.
+
+
