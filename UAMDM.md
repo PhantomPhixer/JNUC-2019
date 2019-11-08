@@ -1,3 +1,3 @@
 # UAMDM #
 
-When a device is enrolled into Jamf using a QuickAdd package it needs 
+When a device is enrolled into Jamf using a QuickAdd package it needs the MDM profile approvings 
