@@ -68,4 +68,11 @@ If the MDM profile does need approving there are many options to tell them, in t
 
 ![Self Service](https://github.com/PhantomPhixer/JNUC-2019/blob/master/images/UAMDM-4.png)
 
+Another alternative is to use DEPNotify as the prompt mechanism, this can be scripted to stay present until the user has accepted;
+
+![DEPNotify](https://github.com/PhantomPhixer/JNUC-2019/blob/master/images/UAMDM-5.png)
+
+
+
+
 
