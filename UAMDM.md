@@ -64,11 +64,11 @@ esac
 
 This prevents prompting the user if they have approved the MDM profile but Jamf doesn't have the information in inventory. The policy would then update invemtory and move the device out of scope.
 
-If the MDM profile does need approving there are many options to tell them, in this example *Self Service* is opened because this will give the user a nice pictorial guide.
+If the MDM profile does need approving there are many options to tell them, in this example *Self Service* is opened because this will give the user a nice pictorial guide;
 
 ![Self Service](https://github.com/PhantomPhixer/JNUC-2019/blob/master/images/UAMDM-4.png)
 
-Another alternative is to use DEPNotify as the prompt mechanism, this can be scripted to stay present until the user has accepted;
+Another alternative is to use *DEPNotify* as the prompt mechanism, this can be scripted to stay present until the user has accepted;
 
 ![DEPNotify](https://github.com/PhantomPhixer/JNUC-2019/blob/master/images/UAMDM-5.png)
 
