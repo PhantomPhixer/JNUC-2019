@@ -7,3 +7,14 @@ When a device is enrolled into Jamf using a QuickAdd package it needs the MDM pr
 Apple do not allow any way of automating the approval process so it has to be an actual logged in user that approves it. There is no way to force a user to do this however you can prompt them until they do, and this is the process used here.
 
 *As the profile only has to be approved by **A** user, not **every** user a system admin account can be used to approve on behalf of every other user...*
+
+## How to Prompt A User ##
+
+To prompt a user first we need to target the relevant devices. Jamf has a built in attribute **User approved MDM** which is set to *yes* when approved.
+
+Use this in a *smart group* to scope the policy, shown later.
+
+In my example the *smart group* is locked down to those devices managed by the specific user set in the QuickAdd package, but this isn't strictly necessary.
+
+![UAMDM SG](https://github.com/PhantomPhixer/JNUC-2019/blob/master/images/UAMDM-2.png)
+
