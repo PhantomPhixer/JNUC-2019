@@ -6,7 +6,7 @@ When a device is enrolled into Jamf using a QuickAdd package it needs the MDM pr
 
 Apple do not allow any way of automating the approval process so it has to be an actual logged in user that approves it. There is no way to force a user to do this however you can prompt them until they do, and this is the process used here.
 
-*As the profile only has to be approved by **A** user, not **every** user a system admin account can be used to approve on behalf of every other user...*
+*As the profile only has to be approved by **A** user, not **every** user, a system admin account can be used to approve on behalf of every other user...*
 
 ## How to Prompt A User ##
 
