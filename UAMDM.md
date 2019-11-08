@@ -21,3 +21,10 @@ In my example the *smart group* is locked down to those devices managed by the s
 
 ![UAMDM SG](https://github.com/PhantomPhixer/JNUC-2019/blob/master/images/UAMDM-2.png)
 
+### Policy ###
+
+Only one policy is required. This policy is set to run at *login* and *checkin* and scoped to the smart group above. This ensures it will continue to prompt as long as the MDM profile is not approved.
+The policy updates inventory every run to ensure the device drops out of scope if approval completed.
+
+![UAMDM Policy](https://github.com/PhantomPhixer/JNUC-2019/blob/master/images/UAMDM-3.png)
+
