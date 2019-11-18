@@ -69,6 +69,20 @@ The first smart group controls if the installer download is required, this is ba
 
 In the example macOS of *10.13.4* is used to scope out non *--eraseinstall* capable devices, if there are non *APFS* devices with *10.13.4* then scope these out as well.
 
+#### Extras Package Required ####
+
+The second smart group controls whether the extras package is required on the device because it is a Non DEP machine.
+
+![Extras Required SG](https://github.com/PhantomPhixer/JNUC-2019/blob/master/images/extras-required.png)
+
+It uses the state of the *installer valid* and the *DEP Capable EA* to determine whether it is required.
+
+#### Erase Ready ####
+
+There are two *Erase Ready* groups required. one for the **DEP** devices;
+
+
+
 
 
 
