@@ -139,7 +139,7 @@ rm -Rf /Library/Management/erase-install/extras
 
 rm -f "/Library/Application Support/JAMF/Receipts/jnuc_erase_install_extras.pkg"
 ```
-Then runs an invemntory to update all the groups.
+Then runs an inventory to update all the groups.
 
 
 
