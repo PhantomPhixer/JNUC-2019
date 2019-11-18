@@ -21,10 +21,10 @@ Two new EAs are required.
 
 #### Installer valid ####
 The first is an **Installer Valid** EA. This is based upon a part of the *install-erase* script and is used to determine whether the installer is required to be downloaded. This is decided by whether the installer is;
-1. Downloaded or not
+1. Downloaded or not.
 2. A valid version - Greater or equal to the installed OS version.
 
-[The Ea is available here](../master/files/installer-valid-ea.txt). In Jamf create an Ea of *String* and type as *script*
+The EA is [available here](../master/files/installer-valid-ea.txt). In Jamf create an Ea of *String* and type as *script*
 
 #### DEP Capable ####
 
@@ -56,4 +56,11 @@ A package is required for the workflow. This is a single package containing the 
 ![Package layout](https://github.com/PhantomPhixer/JNUC-2019/blob/master/images/Non-DEP-Deploy.png)
 
 The path used to deploy the packages to is the default path the *erase-install* script uses, this can be modified if required. 
+
+### Smart Groups ###
+
+This process requires four *smart groups* to control the policies.
+
+#### Installer Download required ####
+
 
