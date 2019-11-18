@@ -63,4 +63,13 @@ This process requires four *smart groups* to control the policies.
 
 #### Installer Download required ####
 
+The first smart group controls if the installer download is required, this is based upon the *installer-valid EA* above.
+ 
+![Download Required SG](https://github.com/PhantomPhixer/JNUC-2019/blob/master/images/installer-download-required.png)
+
+In the example macOS of *10.13.4* is used to scope out non *--eraseinstall* capable devices, if there are non *APFS* devices with *10.13.4* then scope these out as well.
+
+
+
+
 
