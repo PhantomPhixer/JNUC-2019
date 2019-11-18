@@ -139,8 +139,22 @@ rm -Rf /Library/Management/erase-install/extras
 
 rm -f "/Library/Application Support/JAMF/Receipts/jnuc_erase_install_extras.pkg"
 ```
-Then runs an inventory to update all the groups.
+Then runs an inventory to update all the groups
 
+#### The Final Policy! ####
+
+The final policy is the **Erase Policy**. This could actually be several policies or one policy with differing methods of calling it, Self Service, policy trigger from jamf binary, timed policy push etc.
+
+![Erase Policy](https://github.com/PhantomPhixer/JNUC-2019/blob/master/images/erase-policy.png)
+
+This policy is scoped to the *Erase Ready* groups.
+
+
+## Summary ##
+
+This framework provides the basics for a Jamf policy driven reprovisioning method. Extra workflows can be added into the method easily.
+
+If all devcies are already in Jamf then the initial wipe may not be needed and the method can be applied directly onto the devices for use next time they require reprovisioning.
 
 
 
