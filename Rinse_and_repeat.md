@@ -128,6 +128,19 @@ The *remove Extras policy* is used to remove the *Extras package* if a device mo
 
 ![Extras remove](https://github.com/PhantomPhixer/JNUC-2019/blob/master/images/remove-extras-policy.png)
 
+It runs a simple script to delete the package and the Jamf receipt;
+
+```bash
+#!/bin/bash/
+
+# removes the extras files required for non dep builds if a device becomes dep ready
+
+rm -Rf /Library/Management/erase-install/extras
+
+rm -f "/Library/Application Support/JAMF/Receipts/jnuc_erase_install_extras.pkg"
+```
+Then runs an invemntory to update all the groups.
+
 
 
 
