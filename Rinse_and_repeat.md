@@ -51,6 +51,9 @@ and is [available here](../master/files/DEP-capable-ea.txt)
 
 ### A Package ###
 
-A package is required for th eworkflow. This is a single package containing the two packages used in [Non DEP workflow](https://github.com/PhantomPhixer/JNUC-2019/blob/master/NonDEP.md). A single package is made from them to deploy them only. They do NOT get installed untill the device wipe is initiated.
+A package is required for the workflow. This is a single package containing the two packages used in [Non DEP workflow](https://github.com/PhantomPhixer/JNUC-2019/blob/master/NonDEP.md). A single package is made to deploy them only. They do *NOT* get installed untill the device wipe is initiated.
 
+![Package layout](https://github.com/PhantomPhixer/JNUC-2019/blob/master/images/Non-DEP-Deploy.png)
+
+The path used to deploy the packages to is the default path the *erase-install* script uses, this can be modified if required. 
 
