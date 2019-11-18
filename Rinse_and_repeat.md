@@ -92,6 +92,14 @@ One for the **Non DEP** devices;
 These are used to scope the *Erase* policy when all pre-requisite items are in place.
 
 
+#### Non DEP to DEP ####
+
+This process allows for *Non DEP* devices to be moved into *DEP* This can happen when taking over a fleet that has been purchased from many sources and arranging with the vendors to add those devices into DEP when they hadn't been originally.
+
+If this is happens the deploying the *extras package* will end up with the non DEP workflow being deployed to DEP devices. To prevent this a final smart group is required;
+
+
+
 
 
 
