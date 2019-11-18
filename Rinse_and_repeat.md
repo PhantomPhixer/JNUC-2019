@@ -106,6 +106,16 @@ This looks for devices that have the *Extras package* downloaded but are *DEP ca
 
 Now the smart groups are ready the policies can be built to deploy the mechanism.
 
+#### Installer Download Required ####
+
+Irrespective of the workflow only one macOS installer download policy is required.
+
+This is scoped to the *Download required* group. It runs the *erase-install* script and can be OS version locked if required.
+
+![Download required](https://github.com/PhantomPhixer/JNUC-2019/blob/master/images/installer-download-required.png)
+
+Because of the way the EA and smart group are set up this policy will always ensure a valid installer is downloaded to the device. 
+
 
 
 
