@@ -16,9 +16,36 @@ As mentioned in [Non DEP Start](https://github.com/PhantomPhixer/JNUC-2019/blob/
 ### Extension Attributes ###
 
 Two new EAs are required.
+
+#### Installer valid ####
 The first is an **Installer Valid** EA. This is based upon a part of the *install-erase* script and is used to determine whether the installer is required to be downloaded. This is decided by whether the installer is;
 1. Downloaded or not
 2. A valid version - Greater or equal to the installed OS version.
+
+[The Ea is available here](../master/files/installer-valid-ea.txt). In Jamf create an Ea of *String* and type as *script*
+
+#### DEP Capable ####
+
+The second determines whether the devoce is capable of using DEP. This is critical to scoping in the process.
+This is a simple EA using the *profiles* command;
+
+```bash
+#!/bin/bash
+
+# set default answer to "no". only want to set to "yes" if it's true
+result="no"
+
+# use profiles to see if the device is in Apple. if it is 1 is returned, if not 0
+configURL=$(profiles show -type enrollment | grep ConfigurationURL | grep -c http)
+
+if [ "$configURL" = "1" ]; then
+result="yes"
+fi
+
+echo "<result>$result</result>"
+```
+
+and is [available here](../master/files/DEP-capable-ea.txt)
 
 
 
