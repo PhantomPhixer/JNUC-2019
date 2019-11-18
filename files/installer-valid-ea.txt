@@ -1,0 +1,74 @@
+#!/bin/bash
+
+# complimentary EA to the erase-install script
+# This will test to see if a new installer download is required to allow smart group population and conditional automatic updates of the installer
+
+
+# basically the same function as used in the install-erase script but modified to give specific outputs for EA usage.
+# outputs are:
+# download is equal or newer than installed OS = "valid$installer_version"
+# download is lower than installed OS = "Not valid_$installer_version"
+# no downloaded installer = "Not downloaded"
+
+
+# Directory in which to place the macOS installer. Overridden with --path
+# must match path set in erase-install script
+installer_directory="/Applications"
+
+
+find_existing_installer() {
+    installer_app=$( find "$installer_directory/"*macOS*.app -maxdepth 1 -type d -print -quit 2>/dev/null )
+    # Search for an existing download
+    macOSDMG=$( find $workdir/*.dmg -maxdepth 1 -type f -print -quit 2>/dev/null )
+    macOSSparseImage=$( find $workdir/*.sparseimage -maxdepth 1 -type f -print -quit 2>/dev/null )
+
+    # First let's see if this script has been run before and left an installer
+    if [[ -f "$macOSDMG" ]]; then
+        echo "   [find_existing_installer] Installer image found at $macOSDMG."
+        hdiutil attach "$macOSDMG"
+        installmacOSApp=$( find '/Volumes/'*macOS*/*.app -maxdepth 1 -type d -print -quit 2>/dev/null )
+    elif [[ -f "$macOSSparseImage" ]]; then
+        echo "   [find_existing_installer] Installer sparse image found at $macOSSparseImage."
+        hdiutil attach "$macOSSparseImage"
+        installmacOSApp=$( find '/Volumes/'*macOS*/Applications/*.app -maxdepth 1 -type d -print -quit 2>/dev/null )
+    elif [[ -d "$installer_app" ]]; then
+        echo "   [find_existing_installer] Installer found at $installer_app."
+        # check installer validity:
+        # split the version of the downloaded installer into OS and minor versions
+        installer_version=$( /usr/bin/defaults read "$installer_app/Contents/Info.plist" DTPlatformVersion )
+        installer_os_version=$( echo "$installer_version" | cut -d '.' -f 2 )
+        installer_minor_version=$( /usr/bin/defaults read "$installer_app/Contents/Info.plist" CFBundleShortVersionString | cut -d '.' -f 2 )
+        # split the version of the downloaded installer into OS and minor versions
+        installed_version=$( /usr/bin/sw_vers | grep ProductVersion | awk '{ print $NF }' )
+        installed_os_version=$( echo "$installed_version" | cut -d '.' -f 2 )
+        installed_minor_version=$( echo "$installed_version" | cut -d '.' -f 3 )
+        if [[ $installer_os_version -lt $installed_os_version ]]; then
+            echo "   [find_existing_installer] $installer_version < $installed_version so not valid."
+            result="Not Valid_$installer_version.$installer_minor_version"
+        elif [[ $installer_os_version -eq $installed_os_version ]]; then
+            if [[ $installer_minor_version -lt $installed_minor_version ]]; then
+                echo "   [find_existing_installer] $installer_version.$installer_minor_version < $installed_version so not valid."
+            else
+                echo "   [find_existing_installer] $installer_version.$installer_minor_version >= $installed_version so valid."
+                # installmacOSApp="$installer_app"
+                # app_is_in_applications_folder="yes"
+                result="valid_$installer_version.$installer_minor_version"
+            fi
+        else
+            echo "   [find_existing_installer] $installer_version.$installer_minor_version >= $installed_version so valid."
+            # installmacOSApp="$installer_app"
+            # app_is_in_applications_folder="yes"
+            result="valid_$installer_version.$installer_minor_version"
+        fi
+    else
+        echo "   [find_existing_installer] No valid installer found."
+        result="Not downloaded"
+    fi
+}
+
+
+find_existing_installer
+
+
+echo "<result>$result</result>"
+
