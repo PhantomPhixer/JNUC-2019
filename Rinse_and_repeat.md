@@ -13,6 +13,8 @@ this process uses [Graham Pugh's Erase-install script](https://github.com/graham
 
 As mentioned in [Non DEP Start](https://github.com/PhantomPhixer/JNUC-2019/blob/master/NonDEP.md) the same options can be used with this script meaning the DEP and Non DEP process can be also driven entirely from Jamf with a few additional components.
 
+How this is used is explained later.
+
 ### Extension Attributes ###
 
 Two new EAs are required.
@@ -47,5 +49,8 @@ echo "<result>$result</result>"
 
 and is [available here](../master/files/DEP-capable-ea.txt)
 
+### A Package ###
+
+A package is required for th eworkflow. This is a single package containing the two packages used in [Non DEP workflow](https://github.com/PhantomPhixer/JNUC-2019/blob/master/NonDEP.md). A single package is made from them to deploy them only. They do NOT get installed untill the device wipe is initiated.
 
 
