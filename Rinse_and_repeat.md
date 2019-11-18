@@ -98,6 +98,15 @@ This process allows for *Non DEP* devices to be moved into *DEP* This can happen
 
 If this is happens the deploying the *extras package* will end up with the non DEP workflow being deployed to DEP devices. To prevent this a final smart group is required;
 
+![Non DEP to DEP SG](https://github.com/PhantomPhixer/JNUC-2019/blob/master/images/non-dep-to-dep.png)
+
+This looks for devices that have the *Extras package* downloaded but are *DEP capable*.
+
+### Policies required ###
+
+Now the smart groups are ready the policies can be built to deploy the mechanism.
+
+
 
 
 
