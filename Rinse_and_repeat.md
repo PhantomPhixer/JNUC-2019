@@ -116,9 +116,17 @@ This is scoped to the *Download required* group. It runs the *erase-install* scr
 
 Because of the way the EA and smart group are set up this policy will always ensure a valid installer is downloaded to the device. 
 
+#### Deploy Extras Package ####
 
+The extras package is deployed to members of the *extras package required* smart group, i.e. the Non DEP capable devices.
 
+![Extras required](https://github.com/PhantomPhixer/JNUC-2019/blob/master/images/deploy-extras-policy.png)
 
+#### Remove Extras Package ####
+
+The *remove Extras policy* is used to remove the *Extras package* if a device moves from *Non DEP* to *DEP*.
+
+![Extras remove](https://github.com/PhantomPhixer/JNUC-2019/blob/master/images/remove-extras-policy.png)
 
 
 
