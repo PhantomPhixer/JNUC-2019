@@ -79,7 +79,18 @@ It uses the state of the *installer valid* and the *DEP Capable EA* to determine
 
 #### Erase Ready ####
 
-There are two *Erase Ready* groups required. one for the **DEP** devices;
+There are two *Erase Ready* groups required. 
+
+One for the **DEP** devices;
+
+![Erase Ready DEP SG](https://github.com/PhantomPhixer/JNUC-2019/blob/master/images/DEP-erase-ready.png)
+
+One for the **Non DEP** devices;
+
+![Erase Ready Non DEP SG](https://github.com/PhantomPhixer/JNUC-2019/blob/master/images/NON-DEP-Erase-Ready.png)
+
+These are used to scope the *Erase* policy when all pre-requisite items are in place.
+
 
 
 
